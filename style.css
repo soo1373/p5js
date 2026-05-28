@@ -1,0 +1,114 @@
+/* 전반적인 스타일 초기화 및 고급스러운 서체 적용 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  background: #f8f9fa;
+  color: #212529;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* 헤더 영역 디자인 */
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a1d20;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+
+header .subtitle {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+/* 2행 2열 그리드 레이아웃 */
+#projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 800px;
+  gap: 24px;
+}
+
+/* 개별 카드 컨테이너 */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* p5.js 화면이 담기는 셀 크기 및 비율 */
+#projects .cell {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* 600x400 비율에 딱 맞춤 */
+  position: relative;
+  overflow: hidden;
+  background: #eee;
+  border-bottom: 1px solid #e9ecef;
+}
+
+/* iframe 뷰포트 스케일링 설정 */
+#projects .cell iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 400px;
+  border: none;
+  transform-origin: top left;
+  transform: scale(0.6666); /* 400px 너비 카드에 600px 캔버스를 맞추기 위한 비율 */
+}
+
+/* 카드 하단 정보 텍스트 영역 */
+.card-info {
+  padding: 16px;
+}
+
+.card-info h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 4px;
+}
+
+.card-info p {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+/* 푸터 디자인 */
+footer {
+  margin-top: auto;
+  padding-top: 40px;
+  font-size: 0.8rem;
+  color: #adb5bd;
+}
+
+/* 반응형 대응: 화면이 아주 작아지면 1열로 정렬 */
+@media (max-width: 650px) {
+  #projects {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+}
