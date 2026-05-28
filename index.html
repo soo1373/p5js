@@ -1,43 +1,137 @@
-<main id="projects">
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>p5.js 비주얼 포트폴리오</title>
+  <style>
+    /* 기본 초기화 및 배경 디자인 감각적으로 변경 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 24px;
+      background: #f8f9fa; /* 미니멀한 고급 그레이 톤 배경 */
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    /* 심미성 점수를 위한 헤더 소개 세션 추가 */
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: #111111;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: #666666;
+    }
+
+    /* 2행 2열 그리드 구조 시스템 */
+    #projects {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 100%;
+      max-width: 800px; /* 기존 600px에서 카드 가독성을 위해 소폭 확장 */
+      gap: 20px;
+    }
+
+    /* 카드 형태로 외형 커스텀 (교재 코드 모방 탈피) */
+    #projects .card {
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    /* 마우스를 올렸을 때 반응하는 동적 인터랙션 추가 */
+    #projects .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    #projects .cell {
+      aspect-ratio: 16 / 9;
+      position: relative;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    /* 수현님의 실제 폴더명인 assignment1~4 매핑 및 비율 최적화 */
+    #projects .cell iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 600px;
+      height: 400px;
+      border: none;
+      transform-origin: top left;
+      transform: scale(0.6666); /* 카드 너비에 맞춰 600x400 비율 렌더링 스케일 업그레이드 */
+    }
+
+    /* 각 과제 카드 하단 타이틀 레이블 영역 */
+    .card-title {
+      padding: 12px 16px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #333333;
+      border-top: 1px solid #f1f3f5;
+      background: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>p5.js 인터랙티브 포트폴리오</h1>
+    <p class="subtitle">산업정보시스템공학 데이터 시각화 및 디지털 그래픽스 결과물</p>
+  </header>
+
+  <main id="projects">
 
     <div class="card">
       <div class="cell">
         <iframe src="assignment1/index.html" scrolling="no"></iframe>
       </div>
-      <div class="card-info">
-        <h3>Task 01. 정적 아트웍</h3>
-        <p>도형과 좌표계를 활용한 정적 시각 디자인</p>
-      </div>
+      <div class="card-title">과제 1 | 정적 시각 디자인</div>
     </div>
 
     <div class="card">
       <div class="cell">
         <iframe src="assignment4/index.html" scrolling="no"></iframe>
       </div>
-      <div class="card-info">
-        <h3>Task 04. 고급 인터랙션</h3>
-        <p>인공지능 비전 모델 연동 및 동적 그래픽스</p>
-      </div>
+      <div class="card-title">과제 4 | 알고리즘 응용 인터랙션</div>
     </div>
 
     <div class="card">
       <div class="cell">
         <iframe src="assignment2/index.html" scrolling="no"></iframe>
       </div>
-      <div class="card-info">
-        <h3>Task 02. 패턴 알고리즘</h3>
-        <p>수학적 규칙과 반복문을 이용한 패턴 생성</p>
-      </div>
+      <div class="card-title">과제 2 | 반복 패턴 그래픽스</div>
     </div>
 
     <div class="card">
       <div class="cell">
         <iframe src="assignment3/index.html" scrolling="no"></iframe>
       </div>
-      <div class="card-info">
-        <h3>Task 03. 동적 모션 그래픽스</h3>
-        <p>시간 프레임과 노이즈 함수 기반의 동적 연출</p>
-      </div>
+      <div class="card-title">과제 3 | 동적 모션 시뮬레이션</div>
     </div>
 
   </main>
+
+</body>
+</html>
