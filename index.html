@@ -17,7 +17,7 @@
       align-items: center;
       min-height: 100vh;
       padding: 40px 24px;
-      background: #f8f9fa; 
+      background: #f8f9fa;
       font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
@@ -38,12 +38,12 @@
       color: #666666;
     }
 
-    /* 수정 핵심: 어떤 화면 크기에서도 무조건 2열(1fr 1fr)을 유지하도록 고정 
+    /* 수정 핵심: 어떤 화면 크기에서도 무조건 2열(1fr 1fr)을 유지하도록 고정
       화면이 늘어나거나 줄어들어도 유연하게 2행 2열을 유지합니다.
     */
     #projects {
       display: grid;
-      grid-template-columns: 1fr 1fr; 
+      grid-template-columns: 1fr 1fr;
       width: 100%;
       max-width: 900px; /* 카드 가독성을 위해 전체 폭 최적화 */
       gap: 20px;
